@@ -19,8 +19,8 @@ html, body {
 import SidebarNav from '@/components/SidebarNav.vue';
 
 export default {
-  components: {
-    SidebarNav,
-  }
-}
+	components: {
+		SidebarNav,
+	},
+};
 </script>
