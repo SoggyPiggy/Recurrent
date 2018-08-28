@@ -11,5 +11,16 @@ html, body {
 
 <template>
   <a-layout id="app">
+    <sidebar-nav/>
   </a-layout>
 </template>
+
+<script>
+import SidebarNav from '@/components/SidebarNav.vue';
+
+export default {
+  components: {
+    SidebarNav,
+  }
+}
+</script>
