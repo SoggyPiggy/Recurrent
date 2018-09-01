@@ -4,13 +4,19 @@
   height: 100vh;
 }
 
+.ant-btn {
+	margin-right: 8px;
+}
+.ant-btn-group .ant-btn {
+	margin-right: 0;
+}
+
 .scrollview {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	position: relative;
 }
-
 .scrollview > * {
 	position: absolute;
 	left: 0;
