@@ -1,8 +1,4 @@
 <style>
-html, body {
-  all: unset;
-}
-
 #app {
   width: 100vw;
   height: 100vh;
