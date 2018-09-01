@@ -1,6 +1,9 @@
 <template>
 	<a-layout-sider collapsible>
-		<a-menu theme="dark" @select="({ key }) => this.$emit('select', key)" :defaultSelectedKeys="['home']">
+		<a-menu
+		theme="dark"
+		@select="({ key }) => this.$emit('select', key)"
+		:defaultSelectedKeys="['home']">
 			<a-menu-item key="home">
 				<a-icon type="home"/>
 				<span>Home</span>
