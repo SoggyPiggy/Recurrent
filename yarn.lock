@@ -6460,6 +6460,10 @@ querystringify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.0.0.tgz#fa3ed6e68eb15159457c89b37bc6472833195755"
 
+random-js@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/random-js/-/random-js-1.0.8.tgz#968fd689a6f25d6c0aac766283de2f688c9c190a"
+
 randomatic@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-3.1.0.tgz#36f2ca708e9e567f5ed2ec01949026d50aa10116"
@@ -6604,6 +6608,12 @@ readdirp@^2.0.0:
     minimatch "^3.0.2"
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
+
+recurrent-core@soggypiggy/recurrent-core#stable:
+  version "1.0.0"
+  resolved "https://codeload.github.com/soggypiggy/recurrent-core/tar.gz/4ffd0601301d92eff901af392cdccb63469083ee"
+  dependencies:
+    random-js "^1.0.8"
 
 redent@^1.0.0:
   version "1.0.0"
