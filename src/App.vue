@@ -28,17 +28,45 @@
 </style>
 
 <template>
-  <a-layout id="app">
-    <sidebar-nav/>
-  </a-layout>
+	<a-layout id="app">
+		<sidebar-nav @select="(key) => page = key"/>
+		<a-layout-content>
+			<div class="scrollview">
+				<component :is="pageComponent" style="padding: 16px;"/>
+			</div>
+		</a-layout-content>
+	</a-layout>
 </template>
 
 <script>
+import { Game } from 'recurrent-core';
 import SidebarNav from '@/components/SidebarNav.vue';
+import HomeView from '@/views/HomeView.vue';
+import ChapterView from '@/views/ChapterView.vue';
+import NewView from '@/views/NewView.vue';
+
+const game = Game.instance;
 
 export default {
+	data() {
+		return {
+			game,
+			page: 'home',
+		};
+	},
 	components: {
 		SidebarNav,
+	},
+	computed: {
+		pageComponent() {
+			switch (this.page) {
+				default:
+				case 'home': return HomeView;
+				case 'active': return ChapterView;
+				case 'past': return HomeView;
+				case 'new': return NewView;
+			}
+		},
 	},
 };
 </script>
