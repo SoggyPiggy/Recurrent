@@ -6611,7 +6611,7 @@ readdirp@^2.0.0:
 
 recurrent-core@soggypiggy/recurrent-core#stable:
   version "1.0.0"
-  resolved "https://codeload.github.com/soggypiggy/recurrent-core/tar.gz/4ffd0601301d92eff901af392cdccb63469083ee"
+  resolved "https://codeload.github.com/soggypiggy/recurrent-core/tar.gz/8cab6630330ccee259c722a57693641c721e8bba"
   dependencies:
     random-js "^1.0.8"
 
