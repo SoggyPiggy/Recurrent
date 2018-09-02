@@ -39,10 +39,13 @@ export default {
 		};
 	},
 	computed: {
-		canReroll() {
-			if (!game.chapter) return 'You have to create a character first.';
-			if (game.chapter.ticks > 0) return 'You can only reroll a new character.';
-			return true;
+		canReroll: () => {
+			switch (game.status) {
+				default: return true;
+				case 'no-chapter': return 'You need to create a character first.';
+				case 'active-chapter':
+				case 'idle-chapter': return 'You can only reroll a new character.';
+			}
 		},
 		attributes() {
 			if (!game.chapter) return [];
