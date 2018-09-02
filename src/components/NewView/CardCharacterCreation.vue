@@ -7,7 +7,7 @@
 			<a-button
 			type="primary"
 			:disabled="canNew !== true"
-			@click="game.chapters.newChapter()">
+			@click="game.newChapter()">
 				New Character
 			</a-button>
 		</a-tooltip>
