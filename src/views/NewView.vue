@@ -14,22 +14,22 @@
 
 <template>
 	<div class="newview">
-		<card-character-creation/>
-		<card-character-information/>
-		<card-character-attributes/>
+		<new-character-creation/>
+		<new-character-information/>
+		<new-character-attributes/>
 	</div>
 </template>
 
 <script>
-import CardCharacterCreation from '@/components/NewView/CardCharacterCreation.vue';
-import CardCharacterAttributes from '@/components/NewView/CardCharacterAttributes.vue';
-import CardCharacterInformation from '@/components/NewView/CardCharacterInformation.vue';
+import NewCharacterCreation from '@/components/NewViewCards/NewCharacterCreation.vue';
+import NewCharacterAttributes from '@/components/NewViewCards/NewCharacterAttributes.vue';
+import NewCharacterInformation from '@/components/NewViewCards/NewCharacterInformation.vue';
 
 export default {
 	components: {
-		CardCharacterCreation,
-		CardCharacterAttributes,
-		CardCharacterInformation,
+		NewCharacterCreation,
+		NewCharacterAttributes,
+		NewCharacterInformation,
 	},
 };
 </script>
