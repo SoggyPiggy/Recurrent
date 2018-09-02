@@ -20,16 +20,6 @@
 				New Character
 			</a-button>
 		</a-tooltip>
-		<a-tooltip
-		:title="canReroll"
-		placement="bottom"
-		:trigger="canReroll !== true?'hover':'null'">
-			<a-button
-			:disabled="canReroll !== true"
-			@click="game.player.roll()">
-				Reroll Attributes
-			</a-button>
-		</a-tooltip>
 		<chapter-active-controls/>
 	</a-card>
 </template>
