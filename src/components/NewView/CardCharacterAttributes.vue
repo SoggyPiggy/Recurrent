@@ -1,17 +1,15 @@
 <template>
 	<a-card title="Character Attributes">
-		<a-tooltip slot="extra" placement="right">
-			<span slot="title">
-				<span v-if="canReroll !== true">
-					<a-icon type="warning"/>
-					<span> {{canReroll}}</span>
-				</span>
-				<span v-else>Reroll</span>
-			</span>
-			<a-button :disabled="canReroll !== true" shape="circle" @click="game.player.roll()">
-				<a-icon type="sync"/>
-			</a-button>
-		</a-tooltip>
+		<template slot="extra">
+			<a-tooltip
+			placement="bottomRight"
+			:title="canReroll"
+			:trigger="canReroll !== true?'hover':'null'">
+				<a-button :disabled="canReroll !== true" @click="game.player.roll()">
+					<a-icon type="sync"/> Attributes
+				</a-button>
+			</a-tooltip>
+		</template>
 		<a-table
 		:columns="columns"
 		:dataSource="attributes"
