@@ -11,6 +11,10 @@
 	margin-right: 0;
 }
 
+.ant-form.ant-form-horizontal .ant-row {
+	margin-bottom: 0;
+}
+
 .scrollview {
 	width: 100%;
 	height: 100%;
