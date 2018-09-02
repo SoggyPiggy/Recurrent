@@ -1,5 +1,14 @@
+<style>
+.creation-card > * {
+	display: flex;
+}
+.creation-card > * > *:last-child {
+	margin-left: auto;
+}
+</style>
+
 <template>
-	<a-card>
+	<a-card class="creation-card">
 		<a-tooltip
 		:title="canNew"
 		placement="bottom"
