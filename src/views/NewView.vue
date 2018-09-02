@@ -15,6 +15,7 @@
 <template>
 	<div class="newview">
 		<card-character-creation/>
+		<card-character-information/>
 		<card-character-attributes/>
 	</div>
 </template>
@@ -22,11 +23,13 @@
 <script>
 import CardCharacterCreation from '@/components/NewView/CardCharacterCreation.vue';
 import CardCharacterAttributes from '@/components/NewView/CardCharacterAttributes.vue';
+import CardCharacterInformation from '@/components/NewView/CardCharacterInformation.vue';
 
 export default {
 	components: {
 		CardCharacterCreation,
 		CardCharacterAttributes,
+		CardCharacterInformation,
 	},
 };
 </script>
