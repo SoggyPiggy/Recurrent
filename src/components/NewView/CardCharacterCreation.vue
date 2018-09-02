@@ -40,16 +40,12 @@ export default {
 		ChapterActiveControls,
 	},
 	computed: {
-		canNew() {
-			if (!game.chapter) return true;
-			if (game.chapter.active) return 'Pause your current character before making a new.';
-			if (game.chapter.ticks <= 0) return 'You already have a new character.';
-			return true;
-		},
-		canReroll() {
-			if (!game.chapter) return 'You have to create a character first.';
-			if (game.chapter.ticks > 0) return 'You can only reroll a new character.';
-			return true;
+		canNew: () => {
+			switch (game.status) {
+				default: return true;
+				case 'new-chapter': return 'You already have a new character.';
+				case 'active-chapter': return 'Pause your current character before making a new.';
+			}
 		},
 	},
 };
