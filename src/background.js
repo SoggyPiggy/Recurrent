@@ -21,7 +21,13 @@ let mainWindow;
 // Standard scheme must be registered before the app is ready
 protocol.registerStandardSchemes(['app'], { secure: true });
 function createMainWindow() {
-	const window = new BrowserWindow({ minWidth: 480, minHeight: 400 });
+	const browserSettings = {
+		minWidth: 900,
+		minHeight: 600,
+		width: 1600,
+		height: 900,
+	};
+	const window = new BrowserWindow(browserSettings);
 
 	if (isDevelopment) {
 		// Load the url of the dev server if in development mode
