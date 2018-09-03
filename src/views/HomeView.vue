@@ -5,7 +5,7 @@
 		<a-tab-pane tab="Change Log" key="changes">
 			<change-log/>
 		</a-tab-pane>
-		<a-tab-pane tab="Settings" key="settings">
+		<a-tab-pane tab="Settings" key="settings" disabled>
 		</a-tab-pane>
 	</a-tabs>
 </template>
