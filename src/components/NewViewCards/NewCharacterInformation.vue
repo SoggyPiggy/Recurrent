@@ -5,20 +5,33 @@
 			placement="bottomRight"
 			:title="canReroll"
 			:trigger="canReroll !== true?'hover':'null'">
-				<a-button :disabled="canReroll !== true" @click="game.player.information.randomizeRace()">
+				<a-button
+				:disabled="canReroll !== true"
+				@click="game.player.information.randomizeRace()">
 					<a-icon type="sync"/> Race
 				</a-button>
-				<a-button :disabled="canReroll !== true" @click="game.player.information.randomizeName()">
+				<a-button
+				:disabled="canReroll !== true"
+				@click="game.player.information.randomizeName()">
 					<a-icon type="sync"/> Name
 				</a-button>
 			</a-tooltip>
 		</template>
 		<a-form layout="horizontal">
 			<a-form-item label="Race" :labelCol="{ span: 2 }" :wrapperCol="{ span: 10 }">
-				<a-input readOnly :disabled="canReroll !== true" placeholder="Character Race" v-model="race"/>
+				<a-input
+				readOnly
+				:disabled="canReroll !== true"
+				placeholder="Character Race"
+				v-model="race"
+				/>
 			</a-form-item>
 			<a-form-item label="Name" :labelCol="{ span: 2 }" :wrapperCol="{ span: 10 }">
-				<a-input :disabled="canReroll !== true" placeholder="Character Name" v-model="name"/>
+				<a-input
+				:disabled="canReroll !== true"
+				placeholder="Character Name"
+				v-model="name"
+				/>
 			</a-form-item>
 		</a-form>
 	</a-card>
@@ -44,20 +57,19 @@ export default {
 				case 'idle-chapter': return 'You can only reroll a new character.';
 			}
 		},
-		race: () => {
-			if (!game.chapter) return;
+		race() {
+			if (!game.chapter) return '';
 			return game.chapter.player.race;
 		},
 		name: {
-			get: () => {
-				if (!game.chapter) return;
+			get() {
+				if (!game.chapter) return '';
 				return game.chapter.player.name;
 			},
-			set: (value) => {
-				if (!game.chapter) return;
-				game.chapter.player.name = value;
+			set(value) {
+				if (game.chapter) game.chapter.player.name = value;
 			},
-		}
+		},
 	},
 };
 </script>
