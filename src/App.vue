@@ -7,6 +7,9 @@
 .ant-btn {
 	margin-right: 8px;
 }
+.ant-btn:last-child {
+	margin-right: 0;
+}
 .ant-btn-group .ant-btn {
 	margin-right: 0;
 }
