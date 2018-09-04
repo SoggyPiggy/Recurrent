@@ -2,7 +2,7 @@
 	<a-tabs defaultActiveKey="general">
 		<a-tab-pane tab="General" key="general">
 		</a-tab-pane>
-		<a-tab-pane key="favorites">
+		<a-tab-pane key="favorites" disabled>
 			<span slot="tab">
 				<a-icon type="star"/>
 				Favorites
