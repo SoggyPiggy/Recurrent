@@ -54,19 +54,19 @@ export default {
 					name: 'Awareness',
 					abbreviation: 'AWR',
 					value: attributes.core.awareness,
-					description: 'Konwing the surrounding area.',
+					description: 'Knowing the surrounding area.',
 				},
 				{
 					name: 'Charm',
 					abbreviation: 'CHA',
 					value: attributes.core.charm,
-					description: 'Konwing what just to say.',
+					description: 'Knowing what just to say.',
 				},
 				{
 					name: 'Constitution',
 					abbreviation: 'CON',
 					value: attributes.core.constitution,
-					description: 'Being about to eat damage.',
+					description: 'Being about to eat more damage.',
 				},
 				{
 					name: 'Denermination',
@@ -78,13 +78,13 @@ export default {
 					name: 'Fortuity',
 					abbreviation: 'FOR',
 					value: attributes.core.fortuity,
-					description: 'Having the best chances in a situation.',
+					description: 'Having better chances in a situation.',
 				},
 				{
 					name: 'Ingenuity',
 					abbreviation: 'ING',
 					value: attributes.core.ingenuity,
-					description: 'Knowing how to make something out of nothing.',
+					description: 'Knowing more about making something out of nothing.',
 				},
 				{
 					name: 'Insight',
