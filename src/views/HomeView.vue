@@ -1,6 +1,9 @@
 <template>
 	<a-tabs defaultActiveKey="home">
-		<a-tab-pane tab="Home" key="home">
+		<a-tab-pane tab="Landing" key="home">
+			<h1>Get started by heading to New Character from the Menu<br/>
+			<a-icon type="left-square"/></h1>
+			<p></p>
 		</a-tab-pane>
 		<a-tab-pane tab="Change Log" key="changes">
 			<change-log/>
