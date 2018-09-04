@@ -38,6 +38,7 @@ import GeneralActiveControls from '@/components/ChapterCards/GeneralActiveContro
 import QuestProgress from '@/components/ChapterCards/QuestProgress.vue';
 import ObjectiveProgress from '@/components/ChapterCards/ObjectiveProgress.vue';
 import ObjectiveInformation from '@/components/ChapterCards/ObjectiveInformation.vue';
+import PlayerLevel from '@/components/ChapterCards/PlayerLevel.vue';
 import PlayerName from '@/components/ChapterCards/PlayerName.vue';
 import PlayerRace from '@/components/ChapterCards/PlayerRace.vue';
 import PlayerAttributes from '@/components/ChapterCards/PlayerAttributes.vue';
@@ -58,8 +59,10 @@ export default {
 			'general-active-controls',
 			'general-progress',
 			'objective-information',
+			'player-level',
 		];
 		const playerComponents = [
+			'player-level',
 			'player-name',
 			'player-race',
 			'player-attributes',
@@ -85,7 +88,7 @@ export default {
 		GeneralActiveControls,
 		QuestProgress,
 		ObjectiveProgress,
-		ObjectiveInformation,
+		PlayerLevel,
 		PlayerName,
 		PlayerRace,
 		PlayerAttributes,
