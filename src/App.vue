@@ -22,6 +22,9 @@
 	text-overflow: ellipsis;
 	overflow-x: hidden;
 }
+.text-center {
+	text-align: center;
+}
 
 .scrollview {
 	width: 100%;
