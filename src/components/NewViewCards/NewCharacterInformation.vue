@@ -8,11 +8,6 @@
 				<a-button :disabled="canReroll !== true" @click="game.player.information.randomizeRace()">
 					<a-icon type="sync"/> Race
 				</a-button>
-			</a-tooltip>
-			<a-tooltip
-			placement="bottomRight"
-			:title="canReroll"
-			:trigger="canReroll !== true?'hover':'null'">
 				<a-button :disabled="canReroll !== true" @click="game.player.information.randomizeName()">
 					<a-icon type="sync"/> Name
 				</a-button>
