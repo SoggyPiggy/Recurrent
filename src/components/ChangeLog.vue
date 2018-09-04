@@ -6,7 +6,7 @@
 			</a-select-option>
 		</a-select>
 		<a-collapse accordion>
-			<a-collapse-panel v-if="additions.length > 0" header="New Additions" key="new">
+			<a-collapse-panel v-if="additions.length > 0" header="New" key="new">
 				<log-list :list="additions"/>
 			</a-collapse-panel>
 			<a-collapse-panel v-if="changes.length > 0" header="Changes" key="changes">
