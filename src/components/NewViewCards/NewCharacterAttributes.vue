@@ -29,10 +29,10 @@ export default {
 		return {
 			game,
 			columns: [
-				{ title: 'Abbr.', dataIndex: 'abbreviation', width: '70px', sorter: true },
-				{ title: 'Level', dataIndex: 'value', width: '70px', sorter: true },
-				{ title: 'Atrribute', dataIndex: 'name', width: '100px', sorter: true },
-				{ title: 'Description', dataIndex: 'description', width: '300px', sorter: true },
+				{ title: 'Abbr.', dataIndex: 'abbreviation', width: '70px' },
+				{ title: 'Level', dataIndex: 'value', width: '70px' },
+				{ title: 'Atrribute', dataIndex: 'name', width: '100px' },
+				{ title: 'Description', dataIndex: 'description', width: '300px' },
 			],
 		};
 	},
