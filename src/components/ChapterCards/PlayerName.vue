@@ -17,13 +17,6 @@ export default {
 			required: true,
 		},
 	},
-	computed: {
-		getStatus() {
-			if (this.chapter.player.status.dead) return 'exception';
-			if (this.chapter.active) return 'active';
-			return null;
-		},
-	},
 	components: {
 		FavoriteButton,
 	},
