@@ -1,5 +1,6 @@
 <template>
 	<a-button
+	disabled
 	shape="circle"
 	size="small"
 	:icon="isFavorite ? 'star' : 'star-o'"
