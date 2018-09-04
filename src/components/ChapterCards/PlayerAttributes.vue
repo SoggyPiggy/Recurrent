@@ -1,5 +1,5 @@
 <template>
-	<a-card title="Player Attributes" style="margin:4px;grid-row-end:span 497;">
+	<a-card title="Character Attributes" style="margin:4px;grid-row-end:span 497;">
 		<favorite-button slot="extra" component="player-attributes"/>
 		<a-table
 		:columns="columns"
