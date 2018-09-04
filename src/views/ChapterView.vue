@@ -33,15 +33,15 @@
 import { Game } from 'recurrent-core';
 import GridContainer from '@/components/GridContainer.vue';
 
-import GeneralProgress from '@/components/ChapterCards/GeneralProgress.vue';
 import GeneralActiveControls from '@/components/ChapterCards/GeneralActiveControls.vue';
-import QuestProgress from '@/components/ChapterCards/QuestProgress.vue';
-import ObjectiveProgress from '@/components/ChapterCards/ObjectiveProgress.vue';
+import GeneralProgress from '@/components/ChapterCards/GeneralProgress.vue';
 import ObjectiveInformation from '@/components/ChapterCards/ObjectiveInformation.vue';
+import ObjectiveProgress from '@/components/ChapterCards/ObjectiveProgress.vue';
+import PlayerAttributes from '@/components/ChapterCards/PlayerAttributes.vue';
 import PlayerLevel from '@/components/ChapterCards/PlayerLevel.vue';
 import PlayerName from '@/components/ChapterCards/PlayerName.vue';
 import PlayerRace from '@/components/ChapterCards/PlayerRace.vue';
-import PlayerAttributes from '@/components/ChapterCards/PlayerAttributes.vue';
+import QuestProgress from '@/components/ChapterCards/QuestProgress.vue';
 
 const game = Game.instance;
 
@@ -54,25 +54,25 @@ export default {
 	},
 	data() {
 		const generalComponents = [
-			'player-name',
-			'player-attributes',
 			'general-active-controls',
 			'general-progress',
 			'objective-information',
+			'player-attributes',
 			'player-level',
+			'player-name',
 		];
 		const playerComponents = [
+			'player-attributes',
 			'player-level',
 			'player-name',
 			'player-race',
-			'player-attributes',
 		];
 		const questComponents = [
 			'quest-progress',
 		];
 		const objectiveComponents = [
-			'objective-progress',
 			'objective-information',
+			'objective-progress',
 		];
 		return {
 			game,
@@ -83,15 +83,16 @@ export default {
 		};
 	},
 	components: {
-		GridContainer,
-		GeneralProgress,
 		GeneralActiveControls,
-		QuestProgress,
+		GeneralProgress,
+		GridContainer,
+		ObjectiveInformation,
 		ObjectiveProgress,
+		PlayerAttributes,
 		PlayerLevel,
 		PlayerName,
 		PlayerRace,
-		PlayerAttributes,
+		QuestProgress,
 	},
 };
 </script>
