@@ -1,9 +1,9 @@
 <template>
 	<a-button-group>
-		<a-button @click="game.chapter.activate()" :disabled="!canPlay">
+		<a-button :size="size" @click="game.chapter.activate()" :disabled="!canPlay">
 			<a-icon type="caret-right"/>
 		</a-button>
-		<a-button @click="game.chapter.deactivate()" :disabled="!canPause">
+		<a-button :size="size" @click="game.chapter.deactivate()" :disabled="!canPause">
 			<a-icon type="pause"/>
 		</a-button>
 	</a-button-group>
@@ -15,6 +15,12 @@ import { Game } from 'recurrent-core';
 const game = Game.instance;
 
 export default {
+	props: {
+		size: {
+			type: String,
+			default: 'default',
+		},
+	},
 	data() {
 		return {
 			game,
