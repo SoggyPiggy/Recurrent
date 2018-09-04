@@ -11,7 +11,7 @@
 				Favorites
 			</span>
 		</a-tab-pane>
-		<a-tab-pane tab="Player" key="player">
+		<a-tab-pane tab="Character" key="player">
 			<grid-container :width="258" :height="1" :gutter="0" margin="0" justify="center">
 				<component v-for="item of playerComponents" :key="item" :chapter="chapter" :is="item"/>
 			</grid-container>
