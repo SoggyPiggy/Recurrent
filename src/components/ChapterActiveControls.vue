@@ -1,9 +1,9 @@
 <template>
 	<a-button-group>
-		<a-button :size="size" @click="game.chapter.activate()" :disabled="!canPlay">
+		<a-button :size="size" @click="computedChapter.activate()" :disabled="!canPlay">
 			<a-icon type="caret-right"/>
 		</a-button>
-		<a-button :size="size" @click="game.chapter.deactivate()" :disabled="!canPause">
+		<a-button :size="size" @click="computedChapter.deactivate()" :disabled="!canPause">
 			<a-icon type="pause"/>
 		</a-button>
 	</a-button-group>
@@ -20,6 +20,9 @@ export default {
 			type: String,
 			default: 'default',
 		},
+		chapter: {
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -27,15 +30,21 @@ export default {
 		};
 	},
 	computed: {
+		computedChapter() {
+			if (this.chapter === false) return game.chapter;
+			return this.chapter;
+		},
 		canPlay() {
-			if (!game.chapter) return false;
-			if (game.chapter.active) return false;
-			if (game.player.status.dead) return false;
+			if (!this.computedChapter) return false;
+			if (this.computedChapter !== game.chapter) return false;
+			if (this.computedChapter.active) return false;
+			if (this.computedChapter.player.status.dead) return false;
 			return true;
 		},
 		canPause() {
-			if (!game.chapter) return false;
-			if (!game.chapter.active) return false;
+			if (!this.computedChapter) return false;
+			if (this.computedChapter !== game.chapter) return false;
+			if (!this.computedChapter.active) return false;
 			return true;
 		},
 	},
