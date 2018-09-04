@@ -15,6 +15,11 @@
 	margin-bottom: 0;
 }
 
+.text-ellipsis {
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+}
+
 .scrollview {
 	width: 100%;
 	height: 100%;
