@@ -11,6 +11,7 @@ export default new Vuex.Store({
 	state: {
 		sidebarnavCollapsed: false,
 		chapterviewTabPane: 'general',
+		chapterviewFavorites: [],
 	},
 	/* eslint-disable no-param-reassign */
 	mutations: {
@@ -19,6 +20,13 @@ export default new Vuex.Store({
 		},
 		chapterviewTabPane(state, value) {
 			state.chapterviewTabPane = value;
+		},
+		chapterviewFavorites(state, value) {
+			if (state.chapterviewFavorites.includes(value)) {
+				state.chapterviewFavorites = state.chapterviewFavorites.filter(key => key !== value);
+			} else {
+				state.chapterviewFavorites.push(value);
+			}
 		},
 	},
 	/* eslint-enable no-param-reassign */
