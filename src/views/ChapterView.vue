@@ -5,7 +5,7 @@
 				<component v-for="item of generalComponents" :key="item" :chapter="chapter" :is="item"/>
 			</grid-container>
 		</a-tab-pane>
-		<a-tab-pane key="favorites" disabled>
+		<a-tab-pane key="favorites">
 			<span slot="tab">
 				<a-icon type="star"/>
 				Favorites
