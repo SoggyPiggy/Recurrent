@@ -10,11 +10,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 	state: {
 		sidebarnavCollapsed: false,
+		chapterviewTabPane: 'general',
 	},
 	/* eslint-disable no-param-reassign */
 	mutations: {
 		sidebarnavCollapsed(state, value) {
 			state.sidebarnavCollapsed = value;
+		},
+		chapterviewTabPane(state, value) {
+			state.chapterviewTabPane = value;
 		},
 	},
 	/* eslint-enable no-param-reassign */

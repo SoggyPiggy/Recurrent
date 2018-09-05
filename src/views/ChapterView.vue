@@ -1,5 +1,5 @@
 <template>
-	<a-tabs defaultActiveKey="general">
+	<a-tabs :activeKey="pane" @change="key => pane = key">
 		<a-tab-pane tab="General" key="general">
 			<grid-container :width="258" :height="1" :gutter="0" margin="0" justify="center">
 				<component v-for="item of generalComponents" :key="item" :chapter="chapter" :is="item"/>
@@ -81,6 +81,16 @@ export default {
 			questComponents,
 			objectiveComponents,
 		};
+	},
+	computed: {
+		pane: {
+			get() {
+				return this.$store.state.chapterviewTabPane;
+			},
+			set(value) {
+				this.$store.commit('chapterviewTabPane', value);
+			},
+		},
 	},
 	components: {
 		GeneralActiveControls,
