@@ -11,9 +11,11 @@ export default new Vuex.Store({
 	state: {
 
 	},
+	/* eslint-disable no-param-reassign */
 	mutations: {
 
 	},
+	/* eslint-enable no-param-reassign */
 	actions: {
 
 	},
