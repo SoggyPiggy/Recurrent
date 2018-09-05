@@ -1,6 +1,6 @@
 <template>
 	<a-card title="Quest Progress" style="margin:4px;grid-row-end:span 316;">
-		<favorite-button slot="extra" component="quest-component"/>
+		<favorite-button slot="extra" component="quest-progress"/>
 		<a-progress
 		:percent="Math.floor(chapter.quest.completion * 100)"
 		:status="getStatus"
