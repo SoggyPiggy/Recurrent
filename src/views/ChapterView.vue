@@ -10,6 +10,9 @@
 				<a-icon type="star"/>
 				Favorites
 			</span>
+			<grid-container :width="258" :height="1" :gutter="0" margin="0" justify="center">
+				<component v-for="item of favoriteComponents" :key="item" :chapter="chapter" :is="item"/>
+			</grid-container>
 		</a-tab-pane>
 		<a-tab-pane tab="Character" key="player">
 			<grid-container :width="258" :height="1" :gutter="0" margin="0" justify="center">
@@ -90,6 +93,9 @@ export default {
 			set(value) {
 				this.$store.commit('chapterviewTabPane', value);
 			},
+		},
+		favoriteComponents() {
+			return this.$store.state.chapterviewFavorites;
 		},
 	},
 	components: {
