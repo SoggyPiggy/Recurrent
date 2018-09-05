@@ -9,11 +9,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-
+		sidebarnavCollapsed: false,
 	},
 	/* eslint-disable no-param-reassign */
 	mutations: {
-
+		sidebarnavCollapsed(state, value) {
+			state.sidebarnavCollapsed = value;
+		},
 	},
 	/* eslint-enable no-param-reassign */
 	actions: {
