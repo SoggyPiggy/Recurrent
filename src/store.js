@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 import VuexPersistedState from 'vuex-persistedstate';
 import ElectronStore from 'electron-store';
 
-const store = new ElectronStore({ name: 'vuex' });
+const config = new ElectronStore();
 
 Vue.use(Vuex);
 
@@ -36,9 +36,9 @@ export default new Vuex.Store({
 	plugins: [
 		VuexPersistedState({
 			storage: {
-				getItem: key => store.get(key),
-				setItem: (key, value) => store.set(key, value),
-				removeItem: key => store.delete(key),
+				getItem: key => config.get(key),
+				setItem: (key, value) => config.set(key, value),
+				removeItem: key => config.delete(key),
 			},
 		}),
 	],
