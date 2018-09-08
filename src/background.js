@@ -7,6 +7,7 @@ import {
 	createProtocol,
 	installVueDevtools,
 } from 'vue-cli-plugin-electron-builder/lib';
+import ElectronStore from 'electron-store';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 if (isDevelopment) {
@@ -17,6 +18,16 @@ if (isDevelopment) {
 
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow;
+let config;
+
+function createConfig() {
+	return new ElectronStore({
+		defaults: {
+			width: 800,
+			height: 600,
+		},
+	});
+}
 
 // Standard scheme must be registered before the app is ready
 protocol.registerStandardSchemes(['app'], { secure: true });
@@ -78,5 +89,6 @@ app.on('ready', async () => {
 		// Install Vue Devtools
 		await installVueDevtools();
 	}
+	config = createConfig();
 	mainWindow = createMainWindow();
 });
