@@ -19,6 +19,7 @@ if (isDevelopment) {
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow;
 let config;
+let resizeTimeout = null;
 
 function createConfig() {
 	return new ElectronStore({
@@ -29,17 +30,37 @@ function createConfig() {
 	});
 }
 
+const saveBounds = function saveWindowBounds() {
+	clearTimeout(resizeTimeout);
+	resizeTimeout = setTimeout(() => {
+		const maximized = mainWindow.isMaximized();
+		if (maximized) {
+			config.set('maximized', maximized);
+		} else {
+			config.set(mainWindow.getBounds());
+			config.set('maximized', maximized);
+		}
+	}, 1000);
+};
+
 // Standard scheme must be registered before the app is ready
 protocol.registerStandardSchemes(['app'], { secure: true });
 function createMainWindow() {
 	const browserSettings = {
-		minWidth: 900,
+		minWidth: 800,
 		minHeight: 600,
-		width: 1600,
-		height: 900,
+		width: config.get('width'),
+		height: config.get('height'),
+		x: config.get('x'),
+		y: config.get('y'),
 		backgroundColor: '#F0F2F5',
 	};
 	const window = new BrowserWindow(browserSettings);
+
+	if (config.get('maximized')) window.maximize();
+
+	window.on('resize', () => saveBounds());
+	window.on('move', () => saveBounds());
 
 	if (isDevelopment) {
 		// Load the url of the dev server if in development mode
