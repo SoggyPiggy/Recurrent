@@ -37,6 +37,7 @@ function createMainWindow() {
 		minHeight: 600,
 		width: 1600,
 		height: 900,
+		backgroundColor: '#F0F2F5',
 	};
 	const window = new BrowserWindow(browserSettings);
 
