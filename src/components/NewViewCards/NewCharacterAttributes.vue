@@ -69,7 +69,7 @@ export default {
 					description: 'Being about to eat more damage.',
 				},
 				{
-					name: 'Denermination',
+					name: 'Determination',
 					abbreviation: 'DET',
 					value: attributes.core.determination,
 					description: 'Having the will to continue on for longer.',
