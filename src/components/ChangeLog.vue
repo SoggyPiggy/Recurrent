@@ -13,7 +13,7 @@
 
 .changelog .ant-collapse .ant-collapse-content-box,
 .changelog .ant-collapse .ant-list-item {
-	padding: 4px 0;
+	padding: 4px 8px;
 }
 </style>
 
