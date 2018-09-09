@@ -8,6 +8,7 @@ import {
 	installVueDevtools,
 } from 'vue-cli-plugin-electron-builder/lib';
 import ElectronStore from 'electron-store';
+import { autoUpdater } from 'electron-updater';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 if (isDevelopment) {
@@ -114,6 +115,7 @@ app.on('ready', async () => {
 		// Install Vue Devtools
 		await installVueDevtools();
 	}
+	autoUpdater.checkForUpdatesAndNotify();
 	config = createConfig();
 	mainWindow = createMainWindow();
 });
