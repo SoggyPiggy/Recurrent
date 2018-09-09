@@ -6647,9 +6647,9 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-recurrent-core@soggypiggy/recurrent-core#stable:
+recurrent-core@soggypiggy/recurrent-core:
   version "1.0.0"
-  resolved "https://codeload.github.com/soggypiggy/recurrent-core/tar.gz/ecd48c7dd233a9dfbfd79cb3848779fea52c4612"
+  resolved "https://codeload.github.com/soggypiggy/recurrent-core/tar.gz/048d948e1fec1c580c607fb0438666718b9392ee"
   dependencies:
     random-js "^1.0.8"
 
