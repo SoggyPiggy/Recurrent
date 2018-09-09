@@ -1,5 +1,12 @@
+<style>
+.ant-layout-sider-trigger {
+	position: absolute;
+	width: 100%;
+}
+</style>
+
 <template>
-	<a-layout-sider collapsible>
+	<a-layout-sider collapsible v-model="collapsed">
 		<a-menu
 		theme="dark"
 		@select="({ key }) => this.$emit('select', key)"
@@ -36,6 +43,16 @@ export default {
 		return {
 			game,
 		};
+	},
+	computed: {
+		collapsed: {
+			get() {
+				return this.$store.state.sidebarnavCollapsed;
+			},
+			set(value) {
+				this.$store.commit('sidebarnavCollapsed', value);
+			},
+		},
 	},
 };
 </script>

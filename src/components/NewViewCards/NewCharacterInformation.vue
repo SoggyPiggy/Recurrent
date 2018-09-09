@@ -18,7 +18,7 @@
 			</a-tooltip>
 		</template>
 		<a-form layout="horizontal">
-			<a-form-item label="Race" :labelCol="{ span: 2 }" :wrapperCol="{ span: 10 }">
+			<a-form-item label="Race" :labelCol="{ span: 3 }" :wrapperCol="{ span: 10 }">
 				<a-input
 				readOnly
 				:disabled="canReroll !== true"
@@ -26,7 +26,7 @@
 				v-model="race"
 				/>
 			</a-form-item>
-			<a-form-item label="Name" :labelCol="{ span: 2 }" :wrapperCol="{ span: 10 }">
+			<a-form-item label="Name" :labelCol="{ span: 3 }" :wrapperCol="{ span: 10 }">
 				<a-input
 				:disabled="canReroll !== true"
 				placeholder="Character Name"

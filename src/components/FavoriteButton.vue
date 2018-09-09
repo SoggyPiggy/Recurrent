@@ -1,6 +1,5 @@
 <template>
 	<a-button
-	disabled
 	shape="circle"
 	size="small"
 	:icon="isFavorite ? 'star' : 'star-o'"
@@ -18,12 +17,12 @@ export default {
 	},
 	computed: {
 		isFavorite() {
-			return false;
+			return this.$store.state.chapterviewFavorites.includes(this.component);
 		},
 	},
 	methods: {
 		toggleFavorite() {
-			this.$emit('favorite');
+			this.$store.commit('chapterviewFavorites', this.component);
 		},
 	},
 };

@@ -10,12 +10,14 @@
 				</a-button>
 			</a-tooltip>
 		</template>
-		<a-table
-		:columns="columns"
-		:dataSource="attributes"
-		:pagination="false"
-		size="small"
-		/>
+		<a-list itemLayout="horizontal" size="small" :dataSource="attributes">
+			<a-list-item slot="renderItem" slot-scope="attribute">
+				<a-list-item-meta :description="attribute.description">
+					<a-avatar slot="avatar">{{attribute.abbreviation}}</a-avatar>
+					<span slot="title">{{attribute.name}}: {{attribute.value}}</span>
+				</a-list-item-meta>
+			</a-list-item>
+		</a-list>
 	</a-card>
 </template>
 
@@ -28,12 +30,6 @@ export default {
 	data() {
 		return {
 			game,
-			columns: [
-				{ title: 'Abbr.', dataIndex: 'abbreviation', width: '70px' },
-				{ title: 'Level', dataIndex: 'value', width: '70px' },
-				{ title: 'Atrribute', dataIndex: 'name', width: '100px' },
-				{ title: 'Description', dataIndex: 'description', width: '300px' },
-			],
 		};
 	},
 	computed: {
@@ -69,7 +65,7 @@ export default {
 					description: 'Being about to eat more damage.',
 				},
 				{
-					name: 'Denermination',
+					name: 'Determination',
 					abbreviation: 'DET',
 					value: attributes.core.determination,
 					description: 'Having the will to continue on for longer.',
