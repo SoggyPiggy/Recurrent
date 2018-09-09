@@ -54,10 +54,13 @@ function createMainWindow() {
 		x: config.get('x'),
 		y: config.get('y'),
 		backgroundColor: '#F0F2F5',
+		show: false,
 	};
 	const window = new BrowserWindow(browserSettings);
 
 	if (config.get('maximized')) window.maximize();
+
+	window.show();
 
 	window.on('resize', () => saveBounds());
 	window.on('move', () => saveBounds());
