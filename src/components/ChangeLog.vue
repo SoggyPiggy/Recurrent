@@ -86,14 +86,14 @@ export default {
 			if (this.selectedLog.core.notes.length > 0) return true;
 			return false;
 		},
-		showCoreAdditions() { return this.selectedLog.core.additions.length > 0 },
-		coreAdditions() { return this.selectedLog.core.additions },
-		showCoreChanges() { return this.selectedLog.core.changes.length > 0 },
-		coreChanges() { return this.selectedLog.core.changes },
-		showCoreFixes() { return this.selectedLog.core.fixes.length > 0 },
-		coreFixes() { return this.selectedLog.core.fixes },
-		showCoreNotes() { return this.selectedLog.core.notes.length > 0 },
-		coreNotes() { return this.selectedLog.core.notes },
+		showCoreAdditions() { return this.selectedLog.core.additions.length > 0; },
+		coreAdditions() { return this.selectedLog.core.additions; },
+		showCoreChanges() { return this.selectedLog.core.changes.length > 0; },
+		coreChanges() { return this.selectedLog.core.changes; },
+		showCoreFixes() { return this.selectedLog.core.fixes.length > 0; },
+		coreFixes() { return this.selectedLog.core.fixes; },
+		showCoreNotes() { return this.selectedLog.core.notes.length > 0; },
+		coreNotes() { return this.selectedLog.core.notes; },
 
 		showApp() {
 			if (this.selectedLog.app.additions.length > 0) return true;
@@ -102,14 +102,14 @@ export default {
 			if (this.selectedLog.app.notes.length > 0) return true;
 			return false;
 		},
-		showAppAdditions() { return this.selectedLog.app.additions.length > 0 },
-		appAdditions() { return this.selectedLog.app.additions },
-		showAppChanges() { return this.selectedLog.app.changes.length > 0 },
-		appChanges() { return this.selectedLog.app.changes },
-		showAppFixes() { return this.selectedLog.app.fixes.length > 0 },
-		appFixes() { return this.selectedLog.app.fixes },
-		showAppNotes() { return this.selectedLog.app.notes.length > 0 },
-		appNotes() { return this.selectedLog.app.notes },
+		showAppAdditions() { return this.selectedLog.app.additions.length > 0; },
+		appAdditions() { return this.selectedLog.app.additions; },
+		showAppChanges() { return this.selectedLog.app.changes.length > 0; },
+		appChanges() { return this.selectedLog.app.changes; },
+		showAppFixes() { return this.selectedLog.app.fixes.length > 0; },
+		appFixes() { return this.selectedLog.app.fixes; },
+		showAppNotes() { return this.selectedLog.app.notes.length > 0; },
+		appNotes() { return this.selectedLog.app.notes; },
 	},
 };
 </script>

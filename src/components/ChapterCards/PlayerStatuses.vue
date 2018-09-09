@@ -18,7 +18,7 @@ const colorMix = function mixColorsBasedOnValue(value, min, max) {
 };
 
 const colorValue = function colorFromValue(value) {
-	let mod = Math.min(Math.max((value - .2) * 5, 0), 1);
+	const mod = Math.min(Math.max((value - 0.2) * 5, 0), 1);
 	const red = colorMix(mod, 235, 98);
 	const green = colorMix(mod, 28, 196);
 	const blue = colorMix(mod, 38, 0);
@@ -51,8 +51,8 @@ export default {
 		colorFromValue(value) {
 			const red = 510 * (1 - value);
 			const green = 510 * value;
-			return `rgb(${red < 255 ? Math.round(red) : 255}, ${green < 255 ? Math.round(green) : 255}, 0)`
-		}
+			return `rgb(${red < 255 ? Math.round(red) : 255}, ${green < 255 ? Math.round(green) : 255}, 0)`;
+		},
 	},
 	components: {
 		FavoriteButton,
