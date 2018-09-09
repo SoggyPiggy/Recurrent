@@ -6658,9 +6658,10 @@ readdirp@^2.0.0:
     set-immediate-shim "^1.0.1"
 
 recurrent-core@soggypiggy/recurrent-core:
-  version "1.0.0"
-  resolved "https://codeload.github.com/soggypiggy/recurrent-core/tar.gz/048d948e1fec1c580c607fb0438666718b9392ee"
+  version "1.1.0"
+  resolved "https://codeload.github.com/soggypiggy/recurrent-core/tar.gz/7b6fcd02d0dae35f39719569edcd81d9783ca3cb"
   dependencies:
+    hash-sum "^1.0.2"
     random-js "^1.0.8"
 
 redent@^1.0.0:
