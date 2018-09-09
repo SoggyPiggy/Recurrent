@@ -44,6 +44,7 @@ import PlayerAttributes from '@/components/ChapterCards/PlayerAttributes.vue';
 import PlayerLevel from '@/components/ChapterCards/PlayerLevel.vue';
 import PlayerName from '@/components/ChapterCards/PlayerName.vue';
 import PlayerRace from '@/components/ChapterCards/PlayerRace.vue';
+import PlayerStatuses from '@/components/ChapterCards/PlayerStatuses.vue';
 import QuestProgress from '@/components/ChapterCards/QuestProgress.vue';
 
 const game = Game.instance;
@@ -69,6 +70,7 @@ export default {
 			'player-level',
 			'player-name',
 			'player-race',
+			'player-statuses',
 		];
 		const questComponents = [
 			'quest-progress',
@@ -108,6 +110,7 @@ export default {
 		PlayerLevel,
 		PlayerName,
 		PlayerRace,
+		PlayerStatuses,
 		QuestProgress,
 	},
 };
