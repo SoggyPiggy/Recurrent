@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { version } from '@/../package';
+import { version } from '@/../package.json';
 import ChangeLog from '@/components/ChangeLog.vue';
 
 export default {
