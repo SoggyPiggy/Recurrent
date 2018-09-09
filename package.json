@@ -1,6 +1,10 @@
 {
   "name": "recurrent",
   "version": "0.2.0",
+  "description": "The game you can play without playing.",
+  "repository": "https://github.com/SoggyPiggy/recurrent.git",
+  "author": "SoggyPiggy <soggypiggy@gmail.com>",
+  "license": "GPL-3.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
