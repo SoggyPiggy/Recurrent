@@ -15,7 +15,7 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "ant-design-vue": "^1.1.0-beta.0",
+    "ant-design-vue": "^1.0.3",
     "electron-store": "^2.0.0",
     "electron-updater": "^3.1.2",
     "recurrent-core": "soggypiggy/recurrent-core",
