@@ -38,5 +38,8 @@
     "vue-cli-plugin-electron-builder": "^1.0.0-rc.2",
     "vue-template-compiler": "^2.5.17"
   },
-  "main": "dist_electron/bundled/background.js"
+  "main": "dist_electron/bundled/background.js",
+  "build": {
+    "artifactName": "recurrent-setup-${version}.${ext}"
+  }
 }
