@@ -54,18 +54,14 @@
 </template>
 
 <script>
-import { Game } from 'recurrent-core';
 import SidebarNav from '@/components/SidebarNav.vue';
 import HomeView from '@/views/HomeView.vue';
 import ChapterView from '@/views/ChapterView.vue';
 import NewView from '@/views/NewView.vue';
 
-const game = Game.instance;
-
 export default {
 	data() {
 		return {
-			game,
 			page: 'home',
 		};
 	},
