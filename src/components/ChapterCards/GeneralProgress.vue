@@ -15,7 +15,10 @@
 </template>
 
 <script>
+import { Game } from 'recurrent-core';
 import FavoriteButton from '@/components/FavoriteButton.vue';
+
+const game = Game.instance;
 
 export default {
 	name: 'general-progress',
@@ -24,6 +27,11 @@ export default {
 			type: Object,
 			required: true,
 		},
+	},
+	data() {
+		return {
+			game,
+		};
 	},
 	computed: {
 		getStatusQuest() {

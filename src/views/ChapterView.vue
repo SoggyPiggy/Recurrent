@@ -33,8 +33,7 @@
 </template>
 
 <script>
-import { remote } from 'electron';
-
+import { Game } from 'recurrent-core';
 import GridContainer from '@/components/GridContainer.vue';
 
 import GeneralActiveControls from '@/components/ChapterCards/GeneralActiveControls.vue';
@@ -48,11 +47,13 @@ import PlayerRace from '@/components/ChapterCards/PlayerRace.vue';
 import PlayerStatuses from '@/components/ChapterCards/PlayerStatuses.vue';
 import QuestProgress from '@/components/ChapterCards/QuestProgress.vue';
 
+const game = Game.instance;
+
 export default {
 	props: {
 		chapter: {
 			type: Object,
-			default: () => remote.getGlobal('game').chapter,
+			default: () => game.chapter,
 		},
 	},
 	data() {
@@ -79,6 +80,7 @@ export default {
 			'objective-progress',
 		];
 		return {
+			game,
 			generalComponents,
 			playerComponents,
 			questComponents,

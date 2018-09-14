@@ -10,7 +10,9 @@
 </template>
 
 <script>
-import { remote } from 'electron';
+import { Game } from 'recurrent-core';
+
+const game = Game.instance;
 
 export default {
 	props: {
@@ -22,22 +24,26 @@ export default {
 			default: false,
 		},
 	},
+	data() {
+		return {
+			game,
+		};
+	},
 	computed: {
-		game: () => remote.getGlobal('game'),
 		computedChapter() {
-			if (this.chapter === false) return this.game.chapter;
+			if (this.chapter === false) return game.chapter;
 			return this.chapter;
 		},
 		canPlay() {
 			if (!this.computedChapter) return false;
-			if (this.computedChapter !== this.game.chapter) return false;
+			if (this.computedChapter !== game.chapter) return false;
 			if (this.computedChapter.active) return false;
 			if (this.computedChapter.player.status.dead) return false;
 			return true;
 		},
 		canPause() {
 			if (!this.computedChapter) return false;
-			if (this.computedChapter !== this.game.chapter) return false;
+			if (this.computedChapter !== game.chapter) return false;
 			if (!this.computedChapter.active) return false;
 			return true;
 		},

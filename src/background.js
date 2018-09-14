@@ -9,7 +9,6 @@ import {
 } from 'vue-cli-plugin-electron-builder/lib';
 import ElectronStore from 'electron-store';
 import { autoUpdater } from 'electron-updater';
-import { Game, Database } from 'recurrent-core';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 if (isDevelopment) {
@@ -116,10 +115,6 @@ app.on('ready', async () => {
 		// Install Vue Devtools
 		await installVueDevtools();
 	}
-	const database = new Database(app.getPath('userData'), './gamedata/');
-	Game.createInstance(database);
-	if (!(Game.instance instanceof Promise)) global.game = Game.instance;
-	else Game.instance.then(() => { global.game = Game.instance; });
 	autoUpdater.checkForUpdatesAndNotify();
 	config = createConfig();
 	mainWindow = createMainWindow();

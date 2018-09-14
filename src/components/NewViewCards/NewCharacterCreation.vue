@@ -25,17 +25,23 @@
 </template>
 
 <script>
-import { remote } from 'electron';
+import { Game } from 'recurrent-core';
 import ChapterActiveControls from '@/components/ChapterActiveControls.vue';
 
+const game = Game.instance;
+
 export default {
+	data() {
+		return {
+			game,
+		};
+	},
 	components: {
 		ChapterActiveControls,
 	},
 	computed: {
-		game: () => remote.getGlobal('game'),
 		canNew: () => {
-			switch (this.game.status) {
+			switch (game.status) {
 				default: return true;
 				case 'new-chapter': return 'You already have a new character.';
 				case 'active-chapter': return 'Pause your current character before making a new.';
