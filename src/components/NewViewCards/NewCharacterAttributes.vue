@@ -22,9 +22,7 @@
 </template>
 
 <script>
-import { Game } from 'recurrent-core';
-
-const game = Game.instance;
+import { remote } from 'electron';
 
 export default {
 	data() {
@@ -33,8 +31,9 @@ export default {
 		};
 	},
 	computed: {
+		game: () => remote.getGlobal('game'),
 		canReroll: () => {
-			switch (game.status) {
+			switch (this.this.game.status) {
 				default: return true;
 				case 'no-chapter': return 'You need to create a character first.';
 				case 'active-chapter':
@@ -42,8 +41,8 @@ export default {
 			}
 		},
 		attributes() {
-			if (!game.chapter) return [];
-			const { player } = game;
+			if (!this.game.chapter) return [];
+			const { player } = this.game;
 			const { attributes } = player;
 			return [
 				{
