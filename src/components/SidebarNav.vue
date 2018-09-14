@@ -34,17 +34,11 @@
 </template>
 
 <script>
-import { Game } from 'recurrent-core';
-
-const game = Game.instance;
+import { remote } from 'electron';
 
 export default {
-	data() {
-		return {
-			game,
-		};
-	},
 	computed: {
+		game: () => remote.getGlobal('game'),
 		collapsed: {
 			get() {
 				return this.$store.state.sidebarnavCollapsed;
