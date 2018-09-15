@@ -1,5 +1,5 @@
 <style>
-#app {
+#recurrent-app {
   width: 100vw;
   height: 100vh;
 }
@@ -43,7 +43,7 @@
 </style>
 
 <template>
-	<a-layout id="app">
+	<a-layout id="recurrent-app">
 		<sidebar-nav @select="(key) => page = key"/>
 		<a-layout-content>
 			<div class="scrollview">
