@@ -65,7 +65,9 @@ export default {
 				return Game.instance.chapter.player.name;
 			},
 			set(value) {
-				if (Game.instance.chapter) Game.instance.chapter.player.name = value;
+				if (Game.instance.chapter && value.length <= 16) {
+					Game.instance.chapter.player.name = value;
+				}
 			},
 		},
 	},
