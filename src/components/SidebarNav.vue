@@ -34,8 +34,6 @@
 </template>
 
 <script>
-import { Game } from 'recurrent-core';
-
 export default {
 	data() {
 		return {
