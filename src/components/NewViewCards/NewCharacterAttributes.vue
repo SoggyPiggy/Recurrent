@@ -24,17 +24,15 @@
 <script>
 import { Game } from 'recurrent-core';
 
-const game = Game.instance;
-
 export default {
 	data() {
 		return {
-			game,
+			game: this.$root.game,
 		};
 	},
 	computed: {
 		canReroll: () => {
-			switch (game.status) {
+			switch (Game.instance.status) {
 				default: return true;
 				case 'no-chapter': return 'You need to create a character first.';
 				case 'active-chapter':
@@ -42,8 +40,8 @@ export default {
 			}
 		},
 		attributes() {
-			if (!game.chapter) return [];
-			const { player } = game;
+			if (!Game.instance.chapter) return [];
+			const { player } = Game.instance;
 			const { attributes } = player;
 			return [
 				{
