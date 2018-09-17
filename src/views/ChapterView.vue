@@ -1,15 +1,18 @@
 <template>
-	<a-tabs defaultActiveKey="general">
+	<a-tabs :activeKey="pane" @change="key => pane = key">
 		<a-tab-pane tab="General" key="general">
 			<grid-container :width="258" :height="1" :gutter="0" margin="0" justify="center">
 				<component v-for="item of generalComponents" :key="item" :chapter="chapter" :is="item"/>
 			</grid-container>
 		</a-tab-pane>
-		<a-tab-pane key="favorites" disabled>
+		<a-tab-pane key="favorites">
 			<span slot="tab">
 				<a-icon type="star"/>
 				Favorites
 			</span>
+			<grid-container :width="258" :height="1" :gutter="0" margin="0" justify="center">
+				<component v-for="item of favoriteComponents" :key="item" :chapter="chapter" :is="item"/>
+			</grid-container>
 		</a-tab-pane>
 		<a-tab-pane tab="Character" key="player">
 			<grid-container :width="258" :height="1" :gutter="0" margin="0" justify="center">
@@ -41,15 +44,14 @@ import PlayerAttributes from '@/components/ChapterCards/PlayerAttributes.vue';
 import PlayerLevel from '@/components/ChapterCards/PlayerLevel.vue';
 import PlayerName from '@/components/ChapterCards/PlayerName.vue';
 import PlayerRace from '@/components/ChapterCards/PlayerRace.vue';
+import PlayerStatuses from '@/components/ChapterCards/PlayerStatuses.vue';
 import QuestProgress from '@/components/ChapterCards/QuestProgress.vue';
-
-const game = Game.instance;
 
 export default {
 	props: {
 		chapter: {
 			type: Object,
-			default: () => game.chapter,
+			default: () => Game.instance.chapter,
 		},
 	},
 	data() {
@@ -66,6 +68,7 @@ export default {
 			'player-level',
 			'player-name',
 			'player-race',
+			'player-statuses',
 		];
 		const questComponents = [
 			'quest-progress',
@@ -75,12 +78,24 @@ export default {
 			'objective-progress',
 		];
 		return {
-			game,
 			generalComponents,
 			playerComponents,
 			questComponents,
 			objectiveComponents,
 		};
+	},
+	computed: {
+		pane: {
+			get() {
+				return this.$store.state.chapterviewTabPane;
+			},
+			set(value) {
+				this.$store.commit('chapterviewTabPane', value);
+			},
+		},
+		favoriteComponents() {
+			return this.$store.state.chapterviewFavorites;
+		},
 	},
 	components: {
 		GeneralActiveControls,
@@ -92,6 +107,7 @@ export default {
 		PlayerLevel,
 		PlayerName,
 		PlayerRace,
+		PlayerStatuses,
 		QuestProgress,
 	},
 };

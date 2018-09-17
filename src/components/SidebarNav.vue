@@ -1,5 +1,12 @@
+<style>
+.ant-layout-sider-trigger {
+	position: absolute;
+	width: 100%;
+}
+</style>
+
 <template>
-	<a-layout-sider collapsible>
+	<a-layout-sider collapsible v-model="collapsed">
 		<a-menu
 		theme="dark"
 		@select="({ key }) => this.$emit('select', key)"
@@ -8,11 +15,11 @@
 				<a-icon type="home"/>
 				<span>Home</span>
 			</a-menu-item>
-			<a-menu-item key="active" :disabled="!(game.chapters.items.length > 0)">
+			<a-menu-item key="active" :disabled="!(game.chapters.length > 0)">
 				<a-icon type="user"/>
 				<span>Active Character</span>
 			</a-menu-item>
-			<a-menu-item key="past" :disabled="(!(game.chapters.items.length > 1)) || true">
+			<a-menu-item key="past" :disabled="(!(game.chapters.length > 1)) || true">
 				<a-popover content="Coming soon..." placement="right">
 					<a-icon type="team"/>
 					<span>Past Characters</span>
@@ -27,15 +34,21 @@
 </template>
 
 <script>
-import { Game } from 'recurrent-core';
-
-const game = Game.instance;
-
 export default {
 	data() {
 		return {
-			game,
+			game: this.$root.game,
 		};
+	},
+	computed: {
+		collapsed: {
+			get() {
+				return this.$store.state.sidebarnavCollapsed;
+			},
+			set(value) {
+				this.$store.commit('sidebarnavCollapsed', value);
+			},
+		},
 	},
 };
 </script>

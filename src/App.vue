@@ -1,5 +1,5 @@
 <style>
-#app {
+#recurrent-app {
   width: 100vw;
   height: 100vh;
 }
@@ -43,7 +43,7 @@
 </style>
 
 <template>
-	<a-layout id="app">
+	<a-layout id="recurrent-app">
 		<sidebar-nav @select="(key) => page = key"/>
 		<a-layout-content>
 			<div class="scrollview">
@@ -54,18 +54,14 @@
 </template>
 
 <script>
-import { Game } from 'recurrent-core';
 import SidebarNav from '@/components/SidebarNav.vue';
 import HomeView from '@/views/HomeView.vue';
 import ChapterView from '@/views/ChapterView.vue';
 import NewView from '@/views/NewView.vue';
 
-const game = Game.instance;
-
 export default {
 	data() {
 		return {
-			game,
 			page: 'home',
 		};
 	},
