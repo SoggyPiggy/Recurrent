@@ -28,12 +28,10 @@
 import { Game } from 'recurrent-core';
 import ChapterActiveControls from '@/components/ChapterActiveControls.vue';
 
-const game = Game.instance;
-
 export default {
 	data() {
 		return {
-			game,
+			game: this.$root.game,
 		};
 	},
 	components: {
@@ -41,7 +39,7 @@ export default {
 	},
 	computed: {
 		canNew: () => {
-			switch (game.status) {
+			switch (Game.instance.status) {
 				default: return true;
 				case 'new-chapter': return 'You already have a new character.';
 				case 'active-chapter': return 'Pause your current character before making a new.';

@@ -40,17 +40,15 @@
 <script>
 import { Game } from 'recurrent-core';
 
-const game = Game.instance;
-
 export default {
 	data() {
 		return {
-			game,
+			game: this.$root.game,
 		};
 	},
 	computed: {
 		canReroll: () => {
-			switch (game.status) {
+			switch (Game.instance.status) {
 				default: return true;
 				case 'no-chapter': return 'You need to create a character first.';
 				case 'active-chapter':
@@ -58,16 +56,18 @@ export default {
 			}
 		},
 		race() {
-			if (!game.chapter) return '';
-			return game.chapter.player.race;
+			if (!Game.instance.chapter) return '';
+			return Game.instance.chapter.player.race;
 		},
 		name: {
 			get() {
-				if (!game.chapter) return '';
-				return game.chapter.player.name;
+				if (!Game.instance.chapter) return '';
+				return Game.instance.chapter.player.name;
 			},
 			set(value) {
-				if (game.chapter) game.chapter.player.name = value;
+				if (Game.instance.chapter && value.length <= 16) {
+					Game.instance.chapter.player.name = value;
+				}
 			},
 		},
 	},
