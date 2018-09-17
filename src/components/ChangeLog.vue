@@ -21,7 +21,7 @@
 	<div class="changelog">
 		<a-card>
 				<a-select v-model="logIndex" style="width:100%;">
-					<a-select-option v-for="(log, index) of changelogs" :key="index">
+					<a-select-option v-for="(log, index) of changes" :key="index">
 						v{{log.version}} - {{log.title}}
 					</a-select-option>
 				</a-select>
@@ -62,19 +62,13 @@
 </template>
 
 <script>
-import fs from 'fs';
-import compareVersions from 'compare-versions';
 import LogList from '@/components/ChangeLog/LogList.vue';
-
-const changelogs = fs.readdirSync('./src/changes/')
-	// eslint-disable-next-line global-require, import/no-dynamic-require
-	.map(location => (require(`@/changes/${location}`).default))
-	.sort((a, b) => compareVersions(b.version, a.version));
+import changes from '@/changes/';
 
 export default {
 	data() {
 		return {
-			changelogs,
+			changes,
 			activeKeyData: null,
 			logIndex: 0,
 		};
@@ -92,7 +86,7 @@ export default {
 			},
 		},
 		selectedLog() {
-			return this.changelogs[this.logIndex];
+			return this.changes[this.logIndex];
 		},
 		showCore() {
 			if (this.selectedLog.core.additions.length > 0) return true;
